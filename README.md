@@ -23,6 +23,30 @@ git checkout -b <feature_branch>
 git push -u origin <feature_branch>
 ```
 
+6. Install all dependencies
+```plaintext
+composer install
+```
+
+7. Configure environment settings and generate app key
+```plaintext
+copy .env.example .env
+php artisan key:generate
+```
+
+8. Create MySQL database named `apoteku`
+
+9. Configure database connection
+open .env file and change variable below as needed
+```plaintext
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=apoteku
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
 ## Workflow
 1. Update your forked repository to latest upstream commits
 ```plaintext
