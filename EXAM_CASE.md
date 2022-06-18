@@ -14,7 +14,7 @@ memerlukan anda sebagai kelompok IT untuk memberikan layanan sistem berbasis dar
 memudahkan transaksi pembelian obat. Hal-hal yang perlu diberikan dan diaplikasikan adalah:
 
 1. [x] (5) Platform berbasis Website dengan menggunakan Framework Laravel
-2. [ ] (5) Data Obat berdasarkan daftar Obat yang dimiliki pemerintah. Lihat Case Studi Obat pada Week 3 di ULS. Kedalaman data obat yang disimpan di sistem sesuai dengan Case Studi Obat 
+2. [x] (5) Data Obat berdasarkan daftar Obat yang dimiliki pemerintah. Lihat Case Studi Obat pada Week 3 di ULS. Kedalaman data obat yang disimpan di sistem sesuai dengan Case Studi Obat 
 3. [ ] (10) Terdapat pembagian portal dalam sistem yaitu: Portal Pembeli dan Portal Administrasi. Anda boleh menggunakan template yang ada ataupun mencari template-template yang bersesuaian
 4. [ ] (10) Pembeli dapat melihat katalog baik sebelum dan setelah login
 5. [ ] (10) Pembeli hanya dapat memasukkan ke keranjang beli apabila telah login
