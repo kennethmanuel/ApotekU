@@ -16,8 +16,14 @@ use App\Http\Controllers\MedicineController;
 |
 */
 
+// public
+
+// admin
+Route::get('/admin/medicine/', [MedicineController::class, 'index'])->name('admin.medicine.index');
 Route::get('/admin/medicine/create', [MedicineController::class, 'create'])->name('admin.medicine.create');
-Route::post('/admin/medicine/store', [MedicineController::class, 'store'])->name('admin.medicine.store');
+Route::post('/admin/medicine/create', [MedicineController::class, 'store'])->name('admin.medicine.store');
+Route::get('/admin/medicine/{id}', [MedicineController::class, 'edit'])->name('admin.medicine.edit');
+Route::put('/admin/medicine/{id}', [MedicineController::class, 'update'])->name('admin.medicine.update');
 
 Auth::routes();
 
