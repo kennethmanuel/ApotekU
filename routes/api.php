@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\APIAuthController;
+use App\Http\Controllers\APICategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\APIMedicineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,28 +21,28 @@ use App\Http\Controllers\MedicineController;
 // Route::apiResource('categories', CategoryController::class);
 
 // Public routes
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [APIAuthController::class, 'register']);
+Route::post('/login', [APIAuthController::class, 'login']);
 
-Route::get('/medicines', [MedicineController::class, 'index']);
-Route::get('/medicines/{id}', [MedicineController::class, 'show']);
-Route::get('/medicines/search/{generic_name}', [MedicineController::class, 'search']);
+Route::get('/medicines', [APIMedicineController::class, 'index']);
+Route::get('/medicines/{id}', [APIMedicineController::class, 'show']);
+Route::get('/medicines/search/{generic_name}', [APIMedicineController::class, 'search']);
 
-Route::get('/category', [CategoryController::class, 'index']);
-Route::get('/category/{id}', [CategoryController::class, 'show']);
-Route::get('/categories/search/{name}', [CategoryController::class, 'search']);
+Route::get('/category', [APICategoryController::class, 'index']);
+Route::get('/category/{id}', [APICategoryController::class, 'show']);
+Route::get('/categories/search/{name}', [APICategoryController::class, 'search']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::post('/medicines', [MedicineController::class, 'store']);
-    Route::put('/medicines/{id}', [MedicineController::class, 'update']);
-    Route::delete('/medicines/{id}', [MedicineController::class, 'destory']);
+    Route::post('/medicines', [APIMedicineController::class, 'store']);
+    Route::put('/medicines/{id}', [APIMedicineController::class, 'update']);
+    Route::delete('/medicines/{id}', [APIMedicineController::class, 'destory']);
 
-    Route::post('/category', [CategoryController::class, 'store']);
-    Route::put('/category/{id}', [CategoryController::class, 'update']);
-    Route::delete('/category/{id}', [CategoryController::class, 'destory']);
+    Route::post('/category', [APICategoryController::class, 'store']);
+    Route::put('/category/{id}', [APICategoryController::class, 'update']);
+    Route::delete('/category/{id}', [APICategoryController::class, 'destory']);
 
-    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [APIAuthController::class, 'logout']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

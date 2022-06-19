@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class APICategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,17 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Category::all();
     }
 
     /**
@@ -34,7 +25,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+                'name' => 'required',
+        ]);
+
+        return Category::create($request->all());
     }
 
     /**
@@ -45,18 +40,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return Category::find($id);
     }
 
     /**
@@ -68,17 +52,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->update($request->all());
+        return $category;
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return 
      */
-    public function destroy($id)
+    public function destroy($name)
     {
-        //
+        return Category::where('name','like','%'.$name.'%')->get();
     }
 }

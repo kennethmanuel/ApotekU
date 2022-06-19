@@ -13,4 +13,9 @@ class Category extends Model
         'name',
         'description'
     ];
+
+    public function medicine()
+    {
+        return $this->hasMany(Medicine::class);
+    }
 }
