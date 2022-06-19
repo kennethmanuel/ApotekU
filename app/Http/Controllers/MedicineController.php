@@ -15,7 +15,9 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        //
+        return view('AdminMedicine.index', [
+            "medicines" => Medicine::all()
+        ]);
     }
 
     /**
@@ -84,7 +86,10 @@ class MedicineController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('AdminMedicine.edit_medicine', [
+            "medicine" => Medicine::find($id),
+            "categories" => Category::all()
+        ]);
     }
 
     /**
@@ -96,7 +101,32 @@ class MedicineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'generic_name' => 'required',
+            'form' => 'required',
+            'restriction_formula' => 'required',
+            'price' => 'required',
+            'faskes1' => 'required',
+            'faskes2' => 'required',
+            'faskes3' => 'required',
+            'category_id' => 'required'
+        ]);
+
+        $medicine = Medicine::find($id);
+
+        $medicine->generic_name = $request->generic_name;
+        $medicine->form = $request->form;
+        $medicine->restriction_formula = $request->restriction_formula;
+        $medicine->price = $request->price;
+        $medicine->description = $request->description;
+        $medicine->category_id = $request->category_id;
+        $medicine->faskes1 = ($request->faskes1 != null) ? 1 : 0;
+        $medicine->faskes2 = ($request->faskes2 != null) ? 1 : 0;
+        $medicine->faskes3 = ($request->faskes3 != null) ? 1 : 0;
+
+        $medicine->save();
+
+        return redirect()->route('admin.medicine.index')->with('success', 'Medicine Data Successfuly Updated!');
     }
 
     /**
