@@ -20,4 +20,8 @@ class Medicine extends Model
         'faskes3',
         'category_id',
     ];
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }
