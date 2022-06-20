@@ -24,6 +24,7 @@ Route::get('/admin/medicine/create', [MedicineController::class, 'create'])->nam
 Route::post('/admin/medicine/create', [MedicineController::class, 'store'])->name('admin.medicine.store');
 Route::get('/admin/medicine/{id}', [MedicineController::class, 'edit'])->name('admin.medicine.edit');
 Route::put('/admin/medicine/{id}', [MedicineController::class, 'update'])->name('admin.medicine.update');
+Route::delete('/admin/medicine/{id}', [MedicineController::class, 'destroy'])->name('admin.medicine.destroy');
 
 Auth::routes();
 
