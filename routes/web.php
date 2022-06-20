@@ -16,6 +16,10 @@ use App\Http\Controllers\MedicineController;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 // public
 
 // admin
@@ -29,3 +33,9 @@ Route::delete('/admin/medicine/{id}', [MedicineController::class, 'destroy'])->n
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.index');
+    });
+});
