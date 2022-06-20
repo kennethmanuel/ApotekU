@@ -137,6 +137,9 @@ class MedicineController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $medicine = Medicine::find($id);
+        $medicine->delete();
+
+        return redirect()->route('admin.medicine.index')->with('success', 'Medicine Data Successfuly Removed!');
     }
 }

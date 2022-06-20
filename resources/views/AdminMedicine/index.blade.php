@@ -28,7 +28,7 @@
                 <th scope="col">Faskes TK 2</th>
                 <th scope="col">Faskes TK 3</th>
                 <th scope="col">Price</th>
-                <th scope="col">Edit</th>
+                <th scope="col" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -45,7 +45,14 @@
                     <td>{{ $medicine->faskes3 }}</td>
                     <td>{{ $medicine->price }}</td>
                     <td>
-                        <a class="btn btn-primary " href="{{ route('admin.medicine.edit', $medicine->id) }}">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('admin.medicine.edit', $medicine->id) }}">Edit</a>
+                    </td>
+                    <td>
+                        <form action="{{ route('admin.medicine.destroy', $medicine->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Delete" class="btn btn-danger">
+                        </form>
                     </td>
                 </tr>
             @endforeach
