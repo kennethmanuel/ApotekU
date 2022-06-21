@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -13,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.category.index', [
+            "categories" => Category::all()
+        ]);
     }
 
     /**
@@ -24,6 +28,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view("admin.category.create");
     }
 
     /**
@@ -34,7 +39,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        $category = new Category();
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->save();
+
+        return redirect('/dashboard')->with('status', 'Category Successfuly Added!');
     }
 
     /**
@@ -56,7 +72,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.category.edit', [
+            "category" => Category::find($id)
+        ]);
     }
 
     /**
@@ -68,7 +86,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        $category = Category::find($id);
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->save();
+
+        return redirect('/dashboard')->with('status', 'Category Successfuly Edited!');
     }
 
     /**
@@ -79,6 +108,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect('/dashboard')->with('status', 'Category Successfuly Removed!');
     }
 }
