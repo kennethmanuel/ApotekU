@@ -12,6 +12,7 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Generic Name</th>
+                        <th scope="col">Slug</th>
                         <th scope="col">Form</th>
                         <th scope="col">Restriction Formula</th>
                         <th scope="col">Description</th>
@@ -28,6 +29,7 @@
                         <tr>
                             <th scope="row">{{ $medicine->id }}</th>
                             <td>{{ $medicine->generic_name }}</td>
+                            <td>{{ $medicine->slug }}</td>
                             <td>{{ $medicine->form }}</td>
                             <td>{{ $medicine->restriction_formula }}</td>
                             <td>{{ $medicine->description }}</td>

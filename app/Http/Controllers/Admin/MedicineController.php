@@ -52,6 +52,7 @@ class MedicineController extends Controller
         $medicine = new Medicine();
 
         $medicine->generic_name = $request->generic_name;
+        $medicine->slug = $request->slug;
         $medicine->form = $request->form;
         $medicine->restriction_formula = $request->restriction_formula;
         $medicine->price = $request->price;
@@ -108,12 +109,14 @@ class MedicineController extends Controller
             'faskes1' => 'required',
             'faskes2' => 'required',
             'faskes3' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'slug' => 'required',
         ]);
 
         $medicine = Medicine::find($id);
 
         $medicine->generic_name = $request->generic_name;
+        $medicine->slug = $request->slug;
         $medicine->form = $request->form;
         $medicine->restriction_formula = $request->restriction_formula;
         $medicine->price = $request->price;
@@ -139,6 +142,6 @@ class MedicineController extends Controller
         $medicine = Medicine::find($id);
         $medicine->delete();
 
-        return redirect()->route('admin.medicine.index')->with('success', 'Medicine Data Successfuly Removed!');
+        return redirect('/dashboard')->with('status', 'Medicine Data Successfuly Removed!');
     }
 }
