@@ -13,7 +13,7 @@
                     @foreach ($featured_medicines as $medicine)
                         <div class="item">
                             <div class="card">
-                                <a href="{{ url('product/'.$medicine->slug)  }}">
+                                <a href="{{ url('medicine/'.$medicine->slug)  }}">
                                     <img src="{{ asset('assets/images/canabis.png') }}" alt="Medicine image">
                                     <div class="card-body">
                                         <h5>{{ $medicine->generic_name }}</h5>
