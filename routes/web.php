@@ -1,11 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\FrontendController;
-use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MedicineController;
+use App\Http\Controllers\Frontend\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +17,9 @@ use App\Http\Controllers\Admin\MedicineController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // public
 
@@ -32,13 +31,15 @@ Route::get('/', function () {
 // Route::put('/admin/medicine/{id}', [MedicineController::class, 'update'])->name('admin.medicine.update');
 // Route::delete('/admin/medicine/{id}', [MedicineController::class, 'destroy'])->name('admin.medicine.destroy');
 
+Route::get('/', [FrontendController::class, 'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/category', [FrontendController::class, 'category']);
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard', [FrontendController::class, 'index']);
+    Route::get('/dashboard', 'App\Http\Controllers\Admin\FrontendController@index');
     Route::resource('/categories', CategoryController::class);
     Route::resource('/medicines', MedicineController::class);
 });

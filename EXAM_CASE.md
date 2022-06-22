@@ -20,9 +20,9 @@ memudahkan transaksi pembelian obat. Hal-hal yang perlu diberikan dan diaplikasi
 5. [ ] (10) Pembeli hanya dapat memasukkan ke keranjang beli apabila telah login
 6. [ ] (10) Pembeli dapat melihat Riwayat beli dari akses mereka masing-masing
 7. [ ] (10) Tim Administrasi dapat melihat semua pembelian yang dilakukan oleh semua pembeli
-8. [ ] (15) Tim Administrasi dapat memanajemen:
-    - [ ] a. Data Obat
-    - [ ] b. Data Kategori Obat
+8. [x] (15) Tim Administrasi dapat memanajemen:
+    - [x] a. Data Obat
+    - [x] b. Data Kategori Obat
     - [ ] c. Data pembeli
 9. [ ] (5) Data Obat yang telah dibeli tidak bisa dihapus
 10. [ ] (20) Buatlah 2 laporan pada menu Report yaitu  
