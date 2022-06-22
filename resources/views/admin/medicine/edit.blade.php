@@ -28,6 +28,11 @@
                 </div>
 
                 <div class="form-group m-2 p-2">
+                    <label for="form">Stock</label>
+                    <input class="form-control" type="number" name="stock" value="{{ $medicine->stock }}">
+                </div>
+
+                <div class="form-group m-2 p-2">
                     <label for="restriction">Description</label>
                     <textarea class="form-control" name="description" cols="30" rows="10">{{ $medicine->description }}</textarea>
                 </div>

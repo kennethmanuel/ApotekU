@@ -14,6 +14,7 @@
                         <th scope="col">Generic Name</th>
                         <th scope="col">Slug</th>
                         <th scope="col">Form</th>
+                        <th scope="col">Stock</th>
                         <th scope="col">Restriction Formula</th>
                         <th scope="col">Description</th>
                         <th scope="col">Category</th>
@@ -31,6 +32,7 @@
                             <td>{{ $medicine->generic_name }}</td>
                             <td>{{ $medicine->slug }}</td>
                             <td>{{ $medicine->form }}</td>
+                            <td>{{ $medicine->stock }}</td>
                             <td>{{ $medicine->restriction_formula }}</td>
                             <td>{{ $medicine->description }}</td>
                             <td>{{ $medicine->category->name }}</td>

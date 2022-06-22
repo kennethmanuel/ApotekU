@@ -24,6 +24,10 @@
                     <input class="form-control" type="text" name="form" placeholder="Medicine Form">
                 </div>
                 <div class="form-group m-2 p-2">
+                    <label for="form">Stock</label>
+                    <input class="form-control" type="number" name="stock" placeholder="Medicine Stock">
+                </div>
+                <div class="form-group m-2 p-2">
                     <label for="restriction">Description</label>
                     <textarea class="form-control" name="description" cols="30" rows="10"
                         placeholder="Add Medicine Descriptions..."></textarea>

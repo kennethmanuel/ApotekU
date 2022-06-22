@@ -41,12 +41,12 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $request->validate([
             'generic_name' => 'required',
             'form' => 'required',
             'price' => 'required',
             'category_id' => 'required',
+            'stock' => 'required',
         ]);
 
         $medicine = new Medicine();
@@ -58,6 +58,7 @@ class MedicineController extends Controller
         $medicine->price = $request->price;
         $medicine->description = $request->description;
         $medicine->category_id = $request->category_id;
+        $medicine->stock = $request->stock;
         $medicine->faskes1 = ($request->faskes1 != null) ? 1 : 0;
         $medicine->faskes2 = ($request->faskes2 != null) ? 1 : 0;
         $medicine->faskes3 = ($request->faskes3 != null) ? 1 : 0;
@@ -101,17 +102,16 @@ class MedicineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'generic_name' => 'required',
-            'form' => 'required',
-            'restriction_formula' => 'required',
-            'price' => 'required',
-            'faskes1' => 'required',
-            'faskes2' => 'required',
-            'faskes3' => 'required',
-            'category_id' => 'required',
-            'slug' => 'required',
-        ]);
+        dd($request);
+        // $request->validate([
+        //     'generic_name' => 'required',
+        //     'form' => 'required',
+        //     'restriction_formula' => 'required',
+        //     'price' => 'required',
+        //     'category_id' => 'required',
+        //     'slug' => 'required',
+        //     'stock' => 'required',
+        // ]);
 
         $medicine = Medicine::find($id);
 
@@ -122,6 +122,7 @@ class MedicineController extends Controller
         $medicine->price = $request->price;
         $medicine->description = $request->description;
         $medicine->category_id = $request->category_id;
+        $medicine->stock = $request->stock;
         $medicine->faskes1 = ($request->faskes1 != null) ? 1 : 0;
         $medicine->faskes2 = ($request->faskes2 != null) ? 1 : 0;
         $medicine->faskes3 = ($request->faskes3 != null) ? 1 : 0;

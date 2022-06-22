@@ -25,6 +25,7 @@ class CreateMedicinesTable extends Migration
             $table->boolean('faskes2')->default(0);
             $table->boolean('faskes3')->default(0);
             $table->double('price', 12, 2);
+            $table->integer('stock')->default(10);
             $table->timestamps();
         });
     }
