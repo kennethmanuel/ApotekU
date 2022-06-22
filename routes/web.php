@@ -32,6 +32,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 // Route::delete('/admin/medicine/{id}', [MedicineController::class, 'destroy'])->name('admin.medicine.destroy');
 
 Route::get('/', [FrontendController::class, 'index']);
+Route::get('/product/{slug}', [FrontendController::class, 'productdetail']);
 
 Auth::routes();
 

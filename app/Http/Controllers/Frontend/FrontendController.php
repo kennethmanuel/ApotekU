@@ -26,4 +26,16 @@ class FrontendController extends Controller
             "categories" => Category::all()
         ]);
     }
+
+    public function productdetail($slug)
+    {
+        if (Medicine::where('slug', $slug)->exists()) {
+            return view('frontend.medicine.detail', [
+                "medicine" => Medicine::where('slug', $slug)->first() ,
+            ]);
+        } 
+        else {
+            return redirect('/')->with('status', 'No medicine found!');
+        }
+    }
 }
