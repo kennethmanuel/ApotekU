@@ -13,6 +13,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('category') }}">Category</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Register</a>
+                </li>
             </ul>
         </div>
     </div>

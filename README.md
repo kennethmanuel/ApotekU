@@ -8,35 +8,40 @@
 git clone https://github.com/<Your GitHub Username/ApotekU.git
 ```
 
-3. Add upstream repository
+3. Generate key
+```
+composer key:generate
+```
+
+4. Add upstream repository
 ```plaintext
 git remote add upstream https://github.com/kennethmanuel/ApotekU.git
 ```
 
-4. Make new feature branch
+5. Make new feature branch
 ```plaintext
 git checkout -b <feature_branch>
 ```
 
-5. Push your working feature branch
+6. Push your working feature branch
 ```plaintext
 git push -u origin <feature_branch>
 ```
 
-6. Install all dependencies
+7. Install all dependencies
 ```plaintext
 composer install
 ```
 
-7. Configure environment settings and generate app key
+8. Configure environment settings and generate app key
 ```plaintext
 copy .env.example .env
 php artisan key:generate
 ```
 
-8. Create MySQL database named `apoteku`
+9. Create MySQL database named `apoteku`
 
-9. Configure database connection
+10. Configure database connection
 open .env file and change variable below as needed
 ```plaintext
 DB_CONNECTION=mysql

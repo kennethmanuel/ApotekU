@@ -15,8 +15,8 @@ memudahkan transaksi pembelian obat. Hal-hal yang perlu diberikan dan diaplikasi
 
 1. [x] (5) Platform berbasis Website dengan menggunakan Framework Laravel
 2. [x] (5) Data Obat berdasarkan daftar Obat yang dimiliki pemerintah. Lihat Case Studi Obat pada Week 3 di ULS. Kedalaman data obat yang disimpan di sistem sesuai dengan Case Studi Obat 
-3. [ ] (10) Terdapat pembagian portal dalam sistem yaitu: Portal Pembeli dan Portal Administrasi. Anda boleh menggunakan template yang ada ataupun mencari template-template yang bersesuaian
-4. [ ] (10) Pembeli dapat melihat katalog baik sebelum dan setelah login
+3. [v] (10) Terdapat pembagian portal dalam sistem yaitu: Portal Pembeli dan Portal Administrasi. Anda boleh menggunakan template yang ada ataupun mencari template-template yang bersesuaian
+4. [v] (10) Pembeli dapat melihat katalog baik sebelum dan setelah login
 5. [ ] (10) Pembeli hanya dapat memasukkan ke keranjang beli apabila telah login
 6. [ ] (10) Pembeli dapat melihat Riwayat beli dari akses mereka masing-masing
 7. [ ] (10) Tim Administrasi dapat melihat semua pembelian yang dilakukan oleh semua pembeli
