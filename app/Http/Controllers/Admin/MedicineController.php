@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class MedicineController extends Controller
 {
@@ -15,7 +16,7 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        return view('AdminMedicine.index', [
+        return view('admin.medicine.index', [
             "medicines" => Medicine::all()
         ]);
     }
@@ -27,7 +28,7 @@ class MedicineController extends Controller
      */
     public function create()
     {
-        return view('AdminMedicine.create_medicine', [
+        return view('admin.medicine.create', [
             "categories" => Category::all()
         ]);
     }
@@ -40,18 +41,15 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'generic_name' => 'required',
             'form' => 'required',
-            'restriction_formula' => 'required',
             'price' => 'required',
-            'faskes1' => 'required',
-            'faskes2' => 'required',
-            'faskes3' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
         ]);
 
-        $medicine = new Medicine;
+        $medicine = new Medicine();
 
         $medicine->generic_name = $request->generic_name;
         $medicine->form = $request->form;
@@ -64,7 +62,8 @@ class MedicineController extends Controller
         $medicine->faskes3 = ($request->faskes3 != null) ? 1 : 0;
         $medicine->save();
 
-        return redirect()->route('admin.medicine.create')->with('success', 'Medicine Data Successfuly Added!');
+
+        return redirect('/dashboard')->with('status', 'Medicine Data Successfuly Added!');
     }
 
     /**
@@ -86,7 +85,7 @@ class MedicineController extends Controller
      */
     public function edit($id)
     {
-        return view('AdminMedicine.edit_medicine', [
+        return view('admin.medicine.edit', [
             "medicine" => Medicine::find($id),
             "categories" => Category::all()
         ]);
@@ -126,7 +125,7 @@ class MedicineController extends Controller
 
         $medicine->save();
 
-        return redirect()->route('admin.medicine.index')->with('success', 'Medicine Data Successfuly Updated!');
+        return redirect('/dashboard')->with('status', 'Medicine Data Successfuly Updated!');
     }
 
     /**

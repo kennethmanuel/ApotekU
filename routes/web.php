@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MedicineController;
+use App\Http\Controllers\Admin\MedicineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +25,13 @@ Route::get('/', function () {
 // public
 
 // admin
-Route::get('/admin/medicine/', [MedicineController::class, 'index'])->name('admin.medicine.index');
-Route::get('/admin/medicine/create', [MedicineController::class, 'create'])->name('admin.medicine.create');
-Route::post('/admin/medicine/create', [MedicineController::class, 'store'])->name('admin.medicine.store');
-Route::get('/admin/medicine/{id}', [MedicineController::class, 'edit'])->name('admin.medicine.edit');
-Route::put('/admin/medicine/{id}', [MedicineController::class, 'update'])->name('admin.medicine.update');
-Route::delete('/admin/medicine/{id}', [MedicineController::class, 'destroy'])->name('admin.medicine.destroy');
+// Route::get('/admin/medicine/', [MedicineController::class, 'index'])->name('admin.medicine.index');
+// Route::get('/admin/medicine/create', [MedicineController::class, 'create'])->name('admin.medicine.create');
+// Route::post('/admin/medicine/create', [MedicineController::class, 'store'])->name('admin.medicine.store');
+// Route::get('/admin/medicine/{id}', [MedicineController::class, 'edit'])->name('admin.medicine.edit');
+// Route::put('/admin/medicine/{id}', [MedicineController::class, 'update'])->name('admin.medicine.update');
+// Route::delete('/admin/medicine/{id}', [MedicineController::class, 'destroy'])->name('admin.medicine.destroy');
+
 
 Auth::routes();
 
@@ -39,4 +40,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', [FrontendController::class, 'index']);
     Route::resource('/categories', CategoryController::class);
+    Route::resource('/medicines', MedicineController::class);
 });

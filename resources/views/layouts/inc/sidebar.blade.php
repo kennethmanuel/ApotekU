@@ -25,6 +25,18 @@
                     <p>Add Category</p>
                 </a>
             </li>
+            <li class="nav-item {{ Request::is('medicines') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('medicines')  }}">
+                    <i class="material-icons">person</i>
+                    <p>Medicines</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('medicines/create') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('medicines/create')  }}">
+                    <i class="material-icons">person</i>
+                    <p>Add Medicines</p>
+                </a>
+            </li>
             <li class="nav-item ">
                 <a class="nav-link" href="#">
                     <i class="material-icons">content_paste</i>
