@@ -7,20 +7,38 @@
     <div class="logo"><a href="#" class="simple-text logo-normal">Apoteku</a></div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item active  ">
-                <a class="nav-link" href="./dashboard.html">
+            <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('/dashboard')  }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./user.html">
+            <li class="nav-item {{ Request::is('categories') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('categories')  }}">
                     <i class="material-icons">person</i>
-                    <p>User Profile</p>
+                    <p>Categories</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('categories/create') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('categories/create')  }}">
+                    <i class="material-icons">person</i>
+                    <p>Add Category</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('medicines') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('medicines')  }}">
+                    <i class="material-icons">person</i>
+                    <p>Medicines</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('medicines/create') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('medicines/create')  }}">
+                    <i class="material-icons">person</i>
+                    <p>Add Medicines</p>
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="./tables.html">
+                <a class="nav-link" href="#">
                     <i class="material-icons">content_paste</i>
                     <p>Table List</p>
                 </a>

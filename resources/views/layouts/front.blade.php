@@ -8,7 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>
+        @yield('title')
+    </title>
 
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
@@ -16,26 +18,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
     <!-- Styles -->
-    <link href="{{ asset('admin/css/material-dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/app.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('frontend/css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/css/owl.theme.default.min.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <div class="wrapper ">
-        @include('layouts.inc.sidebar')
-        <div class="main-panel">
-            @include('layouts.inc.navbar')
-            <div class="content">
-                @yield('content')
-            </div>
-            @include('layouts.inc.footer')
-        </div>
+    @include('layouts.inc.frontnavbar')
+    <div class="content">
+        @yield('content')
     </div>
 
     <!--   Core JS Files   -->
-    <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('admin/js/popper.min.js') }}"></script>
-    <script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}"></script>
-    <script src="{{ asset('admin/js/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/app.js') }}"></script>
+    <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if(session('status'))
         <script>
