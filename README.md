@@ -2,52 +2,22 @@
 
 ## Setting up
 1. Fork repositoy
-
 2. Clone your forked repository
 ```plaintext
 git clone https://github.com/<Your GitHub Username/ApotekU.git
 ```
-
-3. Generate key
-```
-composer key:generate
-```
-
-4. Install node dependency
-```
-npm install && npm run dev
-npm install
-```
-
-4. Add upstream repository
-```plaintext
-git remote add upstream https://github.com/kennethmanuel/ApotekU.git
-```
-
-5. Make new feature branch
-```plaintext
-git checkout -b <feature_branch>
-```
-
-6. Push your working feature branch
-```plaintext
-git push -u origin <feature_branch>
-```
-
-7. Install all dependencies
+3. Install all dependencies
 ```plaintext
 composer install
 ```
-
-8. Configure environment settings and generate app key
+4. Configure environment settings and generate app key
 ```plaintext
 copy .env.example .env
 php artisan key:generate
 ```
+5. Create MySQL database named `apoteku` (prefferably)
 
-9. Create MySQL database named `apoteku`
-
-10. Configure database connection
+6. Configure database connection
 open .env file and change variable below as needed
 ```plaintext
 DB_CONNECTION=mysql
@@ -56,6 +26,30 @@ DB_PORT=3306
 DB_DATABASE=apoteku
 DB_USERNAME=root
 DB_PASSWORD=
+```
+7. Migrate
+```
+php artisan migrate
+```
+
+8. Install node dependency
+```
+npm install && npm run dev
+npm install
+```
+
+9. Add upstream repository
+```plaintext
+git remote add upstream https://github.com/kennethmanuel/ApotekU.git
+```
+
+10. Make new feature branch
+```plaintext
+git checkout -b <feature_branch>
+```
+11. Push your working feature branch
+```plaintext
+git push -u origin <feature_branch>
 ```
 
 ## Workflow
