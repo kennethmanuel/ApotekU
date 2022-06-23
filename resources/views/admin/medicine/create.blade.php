@@ -12,6 +12,10 @@
                     <input class="form-control" type="text" name="generic_name" placeholder="Medicine Generic Name">
                 </div>
                 <div class="form-group m-2 p-2">
+                    <label for="generic_name">Slug</label>
+                    <input class="form-control" type="text" name="slug" placeholder="Medicine Slug">
+                </div>
+                <div class="form-group m-2 p-2">
                     <label for="restriction_formula">Restriction Formula</label>
                     <input class="form-control" type="text" name="restriction_formula" placeholder="Restriction Formula">
                 </div>
@@ -20,8 +24,12 @@
                     <input class="form-control" type="text" name="form" placeholder="Medicine Form">
                 </div>
                 <div class="form-group m-2 p-2">
+                    <label for="form">Stock</label>
+                    <input class="form-control" type="number" name="stock" placeholder="Medicine Stock">
+                </div>
+                <div class="form-group m-2 p-2">
                     <label for="restriction">Description</label>
-                    <textarea class="form-control" name="restriction_formula" cols="30" rows="10"
+                    <textarea class="form-control" name="description" cols="30" rows="10"
                         placeholder="Add Medicine Descriptions..."></textarea>
                 </div>
                 <div class="form-group m-2 p-2">

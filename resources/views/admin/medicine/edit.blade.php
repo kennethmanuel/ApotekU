@@ -12,7 +12,10 @@
                     <label for="generic_name">Medicine Generic Name</label>
                     <input class="form-control" type="text" name="generic_name" value="{{ $medicine->generic_name }}">
                 </div>
-
+                <div class="form-group m-2 p-2">
+                    <label for="generic_name">Slug</label>
+                    <input class="form-control" type="text" name="slug" value="{{ $medicine->slug }}">
+                </div>
                 <div class="form-group m-2 p-2">
                     <label for="restriction_formula">Restriction Formula</label>
                     <input class="form-control" type="text" name="restriction_formula"
@@ -22,6 +25,11 @@
                 <div class="form-group m-2 p-2">
                     <label for="form">Form</label>
                     <input class="form-control" type="text" name="form" value="{{ $medicine->form }}">
+                </div>
+
+                <div class="form-group m-2 p-2">
+                    <label for="form">Stock</label>
+                    <input class="form-control" type="number" name="stock" value="{{ $medicine->stock }}">
                 </div>
 
                 <div class="form-group m-2 p-2">

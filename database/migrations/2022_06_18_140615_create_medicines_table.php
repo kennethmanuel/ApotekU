@@ -16,6 +16,7 @@ class CreateMedicinesTable extends Migration
         Schema::create('medicines', function (Blueprint $table) {
             $table->id();
             $table->string('generic_name');
+            $table->string('slug')->unique();
             $table->string('form');
             $table->string('restriction_formula')->nullable();
             $table->text('description')->nullable();
@@ -24,6 +25,7 @@ class CreateMedicinesTable extends Migration
             $table->boolean('faskes2')->default(0);
             $table->boolean('faskes3')->default(0);
             $table->double('price', 12, 2);
+            $table->integer('stock')->default(10);
             $table->timestamps();
         });
     }

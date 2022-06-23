@@ -19,6 +19,8 @@ class Medicine extends Model
         'faskes2',
         'faskes3',
         'category_id',
+        'slug',
+        'stock',
     ];
 
     public function category() {

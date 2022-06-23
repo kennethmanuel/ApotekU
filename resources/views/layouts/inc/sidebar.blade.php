@@ -37,10 +37,28 @@
                     <p>Add Medicines</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="#">
+            <li class="nav-item {{ Request::is('admin/orders') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('admin/orders') }}">
                     <i class="material-icons">content_paste</i>
-                    <p>Table List</p>
+                    <p>Orders</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('users') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('users')  }}">
+                    <i class="material-icons">content_paste</i>
+                    <p>Users</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('report2') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('report2')  }}">
+                    <i class="material-icons">content_paste</i>
+                    <p>Report 2</p>
+                </a>
+            </li>
+            <li class="nav-item {{ Request::is('report1') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('report1')  }}">
+                    <i class="material-icons">content_paste</i>
+                    <p>Report 1</p>
                 </a>
             </li>
         </ul>

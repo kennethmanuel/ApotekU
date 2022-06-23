@@ -17,6 +17,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'asam mefenamat',
+                'slug' => 'asam-mefenamat',
                 'form' => 'kaps 250 mg',
                 'restriction_formula' => '30 kaps/bulan.',
                 'price' => 10000,
@@ -30,6 +31,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'asam mefenamat',
+                'slug' => 'asam-mefenamat-3',
                 'form' => 'tab 500 mg',
                 'restriction_formula' => '30 tab/bulan.',
                 'price' => 12000,
@@ -43,6 +45,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'ibuprofen',
+                'slug' => 'ibuprofen-1',
                 'form' => 'tab 200 mg',
                 'restriction_formula' => '30 tab/bulan.',
                 'price' => 8000,
@@ -56,6 +59,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'ibuprofen',
+                'slug' => 'ibuprofen-2',
                 'form' => 'tab 400 mg',
                 'restriction_formula' => '30 tab/bulan.',
                 'price' => 9500,
@@ -69,6 +73,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'asam mefenamat',
+                'slug' => 'asam-mefenamat-2',
                 'form' => ' susp 100 mg/5 mL',
                 'restriction_formula' => '1 btl/kasus.',
                 'price' => 15000,
@@ -82,6 +87,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'ketoprofen',
+                'slug' => 'ketoprofen',
                 'form' => ' inj 50 mg/mL',
                 'restriction_formula' => '',
                 'price' => 22000,
@@ -95,6 +101,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'ketoprofen',
+                'slug' => 'ketoprofen-2',
                 'form' => 'sup 100 mg',
                 'restriction_formula' => '2 sup/hari, maks 3 hari.',
                 'price' => 25000,
@@ -110,6 +117,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'alopurinol',
+                'slug' => 'alopurinol-2',
                 'form' => 'tab 100 mg',
                 'restriction_formula' => '30tab/bulan',
                 'price' => 17500,
@@ -123,6 +131,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'alopurinol',
+                'slug' => 'alopurinol',
                 'form' => 'tab 300 mg',
                 'restriction_formula' => '30tab/bulan',
                 'price' => 17500,
@@ -136,6 +145,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'kolkisin',
+                'slug' => 'kolkisin',
                 'form' => 'tab 500 mcg',
                 'restriction_formula' => '30tab/bulan',
                 'price' => 16500,
@@ -152,6 +162,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'bupivakain',
+                'slug' => 'bupivakain',
                 'form' => 'inj 0,5%',
                 'restriction_formula' => '',
                 'price' => 12250,
@@ -165,6 +176,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'lidokain',
+                'slug' => 'lidokain',
                 'form' => 'inj 0,5%',
                 'restriction_formula' => '',
                 'price' => 12250,
@@ -178,6 +190,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'lidokain',
+                'slug' => 'lidokain-2',
                 'form' => 'spray topikal 10%',
                 'restriction_formula' => '',
                 'price' => 12250,
@@ -193,6 +206,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'propranolol',
+                'slug' => 'propranolol',
                 'form' => 'tab 10 mg',
                 'restriction_formula' => '',
                 'price' => 25250,
@@ -208,6 +222,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'betahistin',
+                'slug' => 'betahistin',
                 'form' => 'tab 6 mg',
                 'restriction_formula' => 'Untuk vertigo perifer:
                 - BPPV: 1 minggu.
@@ -228,6 +243,7 @@ class MedicineSeeder extends Seeder
         DB::table('medicines')->insert(
             [
                 'generic_name' => 'betahistin',
+                'slug' => 'betahistin-2',
                 'form' => 'tab 24 mg',
                 'restriction_formula' => '90 tab/bulan.n',
                 'price' => 35000,

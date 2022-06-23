@@ -15,19 +15,19 @@ memudahkan transaksi pembelian obat. Hal-hal yang perlu diberikan dan diaplikasi
 
 1. [x] (5) Platform berbasis Website dengan menggunakan Framework Laravel
 2. [x] (5) Data Obat berdasarkan daftar Obat yang dimiliki pemerintah. Lihat Case Studi Obat pada Week 3 di ULS. Kedalaman data obat yang disimpan di sistem sesuai dengan Case Studi Obat 
-3. [ ] (10) Terdapat pembagian portal dalam sistem yaitu: Portal Pembeli dan Portal Administrasi. Anda boleh menggunakan template yang ada ataupun mencari template-template yang bersesuaian
-4. [ ] (10) Pembeli dapat melihat katalog baik sebelum dan setelah login
-5. [ ] (10) Pembeli hanya dapat memasukkan ke keranjang beli apabila telah login
-6. [ ] (10) Pembeli dapat melihat Riwayat beli dari akses mereka masing-masing
-7. [ ] (10) Tim Administrasi dapat melihat semua pembelian yang dilakukan oleh semua pembeli
+3. [x] (10) Terdapat pembagian portal dalam sistem yaitu: Portal Pembeli dan Portal Administrasi. Anda boleh menggunakan template yang ada ataupun mencari template-template yang bersesuaian
+4. [x] (10) Pembeli dapat melihat katalog baik sebelum dan setelah login
+5. [x] (10) Pembeli hanya dapat memasukkan ke keranjang beli apabila telah login
+6. [x] (10) Pembeli dapat melihat Riwayat beli dari akses mereka masing-masing
+7. [x] (10) Tim Administrasi dapat melihat semua pembelian yang dilakukan oleh semua pembeli
 8. [x] (15) Tim Administrasi dapat memanajemen:
     - [x] a. Data Obat
     - [x] b. Data Kategori Obat
-    - [ ] c. Data pembeli
-9. [ ] (5) Data Obat yang telah dibeli tidak bisa dihapus
-10. [ ] (20) Buatlah 2 laporan pada menu Report yaitu  
-    - [ ] Tampilkan secara tabel, 5 data Obat terlaris dari data-data transaksi Anda. Urutkan dari jumlah butir/pack yang terjual paling banyak  
-    - [ ] Tampilkan secara table, 3 data Customer yang paling banyak berbelanja dari sisi nominal pembelian.
+    - [x] c. Data pembeli
+9. [x] (5) Data Obat yang telah dibeli tidak bisa dihapus
+10. [x] (20) Buatlah 2 laporan pada menu Report yaitu  
+    - [x] Tampilkan secara tabel, 5 data Obat terlaris dari data-data transaksi Anda. Urutkan dari jumlah butir/pack yang terjual paling banyak  
+    - [x] Tampilkan secara table, 3 data Customer yang paling banyak berbelanja dari sisi nominal pembelian.
 
 Sebelum demonstrasi, anda sebagai tim IT wajib
 1. [ ] Mengisi Data Obat dan Kategori Obat. Kuantitas Data Obat dan Data Kategori Obat minimal seperti tugas pada Week 3.

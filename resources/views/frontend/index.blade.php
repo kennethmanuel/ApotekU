@@ -13,11 +13,13 @@
                     @foreach ($featured_medicines as $medicine)
                         <div class="item">
                             <div class="card">
-                                <img src="{{ asset('assets/images/canabis.png') }}" alt="Medicine image">
-                                <div class="card-body">
-                                    <h5>{{ $medicine->generic_name }}</h5>
-                                    <small>{{ $medicine->price }}</small>
-                                </div>
+                                <a href="{{ url('medicine/'.$medicine->slug)  }}">
+                                    <img src="{{ asset('assets/images/canabis.png') }}" alt="Medicine image">
+                                    <div class="card-body">
+                                        <h5>{{ $medicine->generic_name }}</h5>
+                                        <small>{{ $medicine->price }}</small>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     @endforeach
@@ -46,7 +48,6 @@
             </div>
         </div>
     </div>
-
 @endsection
 
 @section('scripts')
