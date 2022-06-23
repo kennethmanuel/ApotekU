@@ -56,6 +56,8 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/category', [FrontendController::class, 'category']);
+Route::get('/medicine', [FrontendController::class, 'medicine']);
+Route::get('/category/{id}', [FrontendController::class, 'categorydetail']);
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);

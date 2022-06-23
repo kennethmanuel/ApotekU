@@ -14,6 +14,9 @@
                     <a class="nav-link" href="{{ url('category') }}">Category</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ url('medicine') }}">Medicine</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('cart') }}">Cart</a>
                 </li>
                 @guest

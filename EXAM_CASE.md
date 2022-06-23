@@ -24,8 +24,8 @@ memudahkan transaksi pembelian obat. Hal-hal yang perlu diberikan dan diaplikasi
     - [x] a. Data Obat
     - [x] b. Data Kategori Obat
     - [x] c. Data pembeli
-9. [x] (5) Data Obat yang telah dibeli tidak bisa dihapus
-10. [x] (20) Buatlah 2 laporan pada menu Report yaitu  
+   1. [x] (5) Data Obat yang telah dibeli tidak bisa dihapus
+9.  [x] (20) Buatlah 2 laporan pada menu Report yaitu  
     - [x] Tampilkan secara tabel, 5 data Obat terlaris dari data-data transaksi Anda. Urutkan dari jumlah butir/pack yang terjual paling banyak  
     - [x] Tampilkan secara table, 3 data Customer yang paling banyak berbelanja dari sisi nominal pembelian.
 

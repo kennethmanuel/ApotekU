@@ -23,7 +23,14 @@ class FrontendController extends Controller
     public function category()
     {
         return view('frontend.category', [
-            "categories" => Category::all()
+            "categories" => Category::all(),
+        ]);
+    }
+
+    public function medicine()
+    {
+        return view('frontend.medicine', [
+            "medicines" => Medicine::all()
         ]);
     }
 
@@ -31,10 +38,24 @@ class FrontendController extends Controller
     {
         if (Medicine::where('slug', $slug)->exists()) {
             return view('frontend.medicine.detail', [
-                "medicine" => Medicine::where('slug', $slug)->first() ,
+                "medicine" => Medicine::where('slug', $slug)->first(),
             ]);
-        } 
-        else {
+        } else {
+            return redirect('/')->with('status', 'No medicine found!');
+        }
+    }
+
+    public function categorydetail($id)
+    {
+            $category = Category::where('id', $id)->first();
+            $medicines = Medicine::where('category_id', $category->id)->get();
+
+        if (Category::where('id', $id)->exists()) {
+            return view('frontend.category.detail', [
+                "category" => $category,
+                "medicines" => $medicines
+            ]);
+        } else {
             return redirect('/')->with('status', 'No medicine found!');
         }
     }

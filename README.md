@@ -13,6 +13,12 @@ git clone https://github.com/<Your GitHub Username/ApotekU.git
 composer key:generate
 ```
 
+4. Install node dependency
+```
+npm install && npm run dev
+npm install
+```
+
 4. Add upstream repository
 ```plaintext
 git remote add upstream https://github.com/kennethmanuel/ApotekU.git
