@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MedicineController;
-use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController;
 
 /*
@@ -43,6 +44,8 @@ Route::post('/update-cart', [CartController::class, 'updateCart']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [CartController::class, 'cart']);
+    Route::get('/checkout', [CheckoutController::class, 'index']);
+    Route::post('/place-order', [CheckoutController::class, 'placeorder']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
