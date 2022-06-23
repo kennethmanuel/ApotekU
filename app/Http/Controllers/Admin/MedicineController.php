@@ -7,6 +7,7 @@ use App\Models\Medicine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\OrderDetail;
 
 class MedicineController extends Controller
 {
@@ -141,6 +142,9 @@ class MedicineController extends Controller
      */
     public function destroy($id)
     {
+        if (OrderDetail::where('medicine_id', $id)->exists()) {
+            return redirect('/dashboard')->with('status', "Cannot delete this medicine data!");
+        }
         $medicine = Medicine::find($id);
         $medicine->delete();
 
