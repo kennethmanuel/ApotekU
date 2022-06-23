@@ -25,5 +25,11 @@ class Order extends Model
         'status',
         'message',
         'tracking_no',
+        'total_price',
     ];
+
+    public function orderdetail()
+    {
+        return $this->hasMany(OrderDetail::class);
+    }
 }

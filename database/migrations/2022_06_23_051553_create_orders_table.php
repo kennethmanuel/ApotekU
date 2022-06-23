@@ -24,6 +24,7 @@ class CreateOrdersTable extends Migration
             $table->string('address2');
             $table->string('city');
             $table->string('province');
+            $table->double('total_price', 12, 2);
             $table->tinyInteger('status')->default('0'); // if item is delivered
             $table->string('message')->nullable();
             $table->timestamps();

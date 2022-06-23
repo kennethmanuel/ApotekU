@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use App\Models\Medicine;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class MedicineController extends Controller
@@ -102,7 +103,7 @@ class MedicineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request);
+        // dd($request);
         // $request->validate([
         //     'generic_name' => 'required',
         //     'form' => 'required',
@@ -144,5 +145,20 @@ class MedicineController extends Controller
         $medicine->delete();
 
         return redirect('/dashboard')->with('status', 'Medicine Data Successfuly Removed!');
+    }
+
+    public function report1()
+    {
+        $medicine_collection = DB::table('medicines')
+            ->select('medicines.id', 'medicines.generic_name', DB::raw('SUM(quantity) as total_terjual'))
+            ->join('order_detail', 'medicines.id', '=', 'order_detail.medicine_id')
+            ->groupBy('medicines.id')
+            ->orderByRaw('total_terjual DESC')
+            ->limit(5)
+            ->get();
+
+        return view('admin.report.report1', [
+            "medicine_collection" => $medicine_collection
+        ]);
     }
 }

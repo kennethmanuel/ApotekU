@@ -81,7 +81,9 @@
                                 </tbody>
                             </table>
                             <hr>
-                            <button type="Submit" class="btn btn-primary">Place Order</button>
+                            @if ($cartItems->count() > 0)
+                                <button type="Submit" class="btn btn-primary">Place Order</button>
+                            @endif
                         </div>
                     </div>
                 </div>

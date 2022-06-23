@@ -4,9 +4,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MedicineController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,13 +50,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [CartController::class, 'cart']);
     Route::get('/checkout', [CheckoutController::class, 'index']);
     Route::post('/place-order', [CheckoutController::class, 'placeorder']);
+    Route::get('/my-orders', [UserController::class, 'index']);
+    Route::get('/view-order/{id}', [UserController::class, 'vieworder']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/category', [FrontendController::class, 'category']);
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/dashboard', 'App\Http\Controllers\Admin\FrontendController@index');
+    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/users', [DashboardController::class, 'users']);
+    Route::get('/users/{id}', [DashboardController::class, 'view']);
+    Route::post('/users/{id}', [DashboardController::class, 'update_user']);
+    Route::delete('/users/{id}', [DashboardController::class, 'delete_user']);
+    Route::get('admin/orders', [OrderController::class, 'index']);
+    Route::get('admin/orders/{id}', [OrderController::class, 'view']);
     Route::resource('/categories', CategoryController::class);
     Route::resource('/medicines', MedicineController::class);
+    Route::get('/report2', [UserController::class, 'report2']);
+    Route::get('/report1', [MedicineController::class, 'report1']);
 });

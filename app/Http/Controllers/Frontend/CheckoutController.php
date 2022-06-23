@@ -42,6 +42,14 @@ class CheckoutController extends Controller
         $order->address2 = $request->input('address2');
         $order->city = $request->input('city');
         $order->province = $request->input('province');
+
+        $total = 0;
+        $cartItems_total = Cart::where('user_id', Auth::id())->get();
+        foreach ($cartItems_total as $item) {
+            $total += $item->medicine->price;
+            $order->total_price = $total;
+        }
+
         $order->save();
 
 
