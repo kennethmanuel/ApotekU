@@ -156,7 +156,7 @@ class MedicineController extends Controller
         $medicine_collection = DB::table('medicines')
             ->select('medicines.id', 'medicines.generic_name', DB::raw('SUM(quantity) as total_terjual'))
             ->join('order_detail', 'medicines.id', '=', 'order_detail.medicine_id')
-            ->groupBy('medicines.id')
+            ->groupBy('medicines.id', 'medicines.generic_name')
             ->orderByRaw('total_terjual DESC')
             ->limit(5)
             ->get();

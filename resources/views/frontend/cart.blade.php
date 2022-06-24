@@ -21,7 +21,8 @@
                     @foreach ($cartItems as $item)
                         <div class="row medicine_data">
                             <div class="col-md-2 my-auto">
-                                <img src="{{ asset('assets/images/canabis.png') }}" alt="" height="70px" width="70px">
+                                <img src="{{ asset('assets/images/canabis.png') }}" alt="" height="70px"
+                                    width="70px">
                             </div>
                             <div class="col-md-3 my-auto">
                                 <h6>{{ $item->medicine->generic_name }}</h6>
@@ -51,9 +52,6 @@
                                     Remove</button>
                             </div>
                         </div>
-                        @php
-                            $total += $item->medicine->price * $item->quantity;
-                        @endphp
                     @endforeach
                 </div>
                 <div class="card-footer">
@@ -64,7 +62,7 @@
             @else
                 <div class="card-body text-center">
                     <h2>Your <i class="fa fa-shopping-cart"> Cart is empty</i></h2>
-                    <a href="{{ url('/')  }}" class="btn btn-outline-primary float-end">Continue Shopping</a>
+                    <a href="{{ url('/') }}" class="btn btn-outline-primary float-end">Continue Shopping</a>
                 </div>
             @endif
         </div>
