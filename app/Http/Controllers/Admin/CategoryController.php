@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Category;
+use App\Models\Medicine;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -108,6 +109,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
+        if (Medicine::where('category_id', $id)->exists()) {
+            return redirect('/dashboard')->with('status', "Cannot delete this category data!");
+        }
         $category = Category::find($id);
         $category->delete();
 
