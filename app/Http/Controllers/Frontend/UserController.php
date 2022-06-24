@@ -29,7 +29,7 @@ class UserController extends Controller
         $user_collection = DB::table('users')
             ->select('users.id', 'users.name', DB::raw('SUM(total_price) as total_belanja'))
             ->join('orders', 'users.id', '=', 'orders.user_id')
-            ->groupBy('user_id')
+            ->groupBy('users.id', 'users.name')
             ->orderByRaw('total_belanja DESC')
             ->limit(3)
             ->get();
